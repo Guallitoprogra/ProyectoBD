@@ -41,12 +41,7 @@ ProyectoBD/
 | Datos de prueba realistas con al menos 25 registros por tabla | Completo | `sql/02_datos_prueba.sql` |
 | Indices explicitos con `CREATE INDEX` y justificacion | Completo | `sql/03_indices.sql` y `sql/README.md` |
 
-## Como editar el diagrama
 
-1. Abrir [diagrams.net](https://app.diagrams.net/).
-2. Seleccionar `File > Open From > Device`.
-3. Cargar `diagramas/diagrama_er_chen.drawio`.
-4. Editar o exportar como PNG/PDF si se necesita para una presentacion.
 
 ## Entidades principales
 
