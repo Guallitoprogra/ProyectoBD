@@ -23,9 +23,30 @@ ProyectoBD/
     diagrama_er_chen.drawio     Archivo editable en diagrams.net
   docs/
     diseno_base_datos.md        Modelo relacional y normalizacion
+  sql/
+    01_ddl.sql                  DDL con PK, FK, NOT NULL y CHECK
+    02_datos_prueba.sql         Datos de prueba con 25+ registros por tabla
+    03_indices.sql              Indices explicitos con CREATE INDEX
   README.md
 ```
 
+## Checklist de la rubrica
+
+| Requisito | Estado | Evidencia |
+| --- | --- | --- |
+| Diagrama ER con entidades, atributos, relaciones y cardinalidades | Completo | `assets/diagrama_er_chen.svg` y `diagramas/diagrama_er_chen.drawio` |
+| Modelo relacional documentado | Completo | `docs/diseno_base_datos.md` |
+| Normalizacion hasta 3FN con dependencias funcionales | Completo | `docs/diseno_base_datos.md` |
+| DDL con `PRIMARY KEY`, `FOREIGN KEY` y `NOT NULL` | Completo | `sql/01_ddl.sql` |
+| Datos de prueba realistas con al menos 25 registros por tabla | Completo | `sql/02_datos_prueba.sql` |
+| Indices explicitos con `CREATE INDEX` y justificacion | Completo | `sql/03_indices.sql` y `sql/README.md` |
+
+## Como editar el diagrama
+
+1. Abrir [diagrams.net](https://app.diagrams.net/).
+2. Seleccionar `File > Open From > Device`.
+3. Cargar `diagramas/diagrama_er_chen.drawio`.
+4. Editar o exportar como PNG/PDF si se necesita para una presentacion.
 
 ## Entidades principales
 
@@ -45,3 +66,13 @@ ProyectoBD/
 - Cada detalle corresponde a un producto.
 - Una categoria agrupa muchos productos.
 - Un proveedor suministra muchos productos.
+
+## Scripts SQL
+
+Los scripts estan preparados para PostgreSQL y deben ejecutarse en este orden:
+
+```bash
+psql -U proy2 -d tienda_db -f sql/01_ddl.sql
+psql -U proy2 -d tienda_db -f sql/02_datos_prueba.sql
+psql -U proy2 -d tienda_db -f sql/03_indices.sql
+```

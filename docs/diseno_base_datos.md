@@ -42,3 +42,37 @@ No se duplican datos que dependen de otra entidad. El nombre del cliente no se g
 - id_producto -> id_categoria, id_proveedor, nombre, sku, precio, costo, stock, activo
 - id_venta -> id_cliente, id_empleado, fecha, total, estado
 - id_detalle -> id_venta, id_producto, cantidad, precio_unitario, subtotal
+
+## DDL
+
+El archivo `sql/01_ddl.sql` contiene la definicion completa de tablas. Incluye:
+
+- `PRIMARY KEY` en todas las entidades.
+- `FOREIGN KEY` para representar las relaciones del diagrama.
+- `NOT NULL` en los campos obligatorios.
+- `UNIQUE` para datos que no deben repetirse, como SKU, NIT y email.
+- `CHECK` para validar precios, costos, cantidades, stock y totales.
+
+## Datos de prueba
+
+El archivo `sql/02_datos_prueba.sql` incluye datos realistas para probar el modelo:
+
+- 25 categorias.
+- 25 proveedores.
+- 25 clientes.
+- 25 empleados.
+- 30 productos.
+- 25 ventas.
+- 75 detalles de venta.
+
+Con esto se cumple el requisito de tener al menos 25 registros por tabla.
+
+## Indices
+
+El archivo `sql/03_indices.sql` define indices explicitos:
+
+- `idx_productos_nombre` sobre `productos(nombre)`.
+- `idx_ventas_fecha` sobre `ventas(fecha)`.
+- `idx_detalle_producto` sobre `detalle_venta(id_producto)`.
+
+Estos indices se justifican porque ayudan en busquedas de inventario y reportes de ventas.
