@@ -13,35 +13,6 @@ El diagrama usa notacion Chen:
 
 ![Diagrama entidad-relacion estilo Chen](assets/diagrama_er_chen.svg)
 
-## Archivos incluidos
-
-```text
-ProyectoBD/
-  assets/
-    diagrama_er_chen.svg        Imagen visible en GitHub
-  diagramas/
-    diagrama_er_chen.drawio     Archivo editable en diagrams.net
-  docs/
-    diseno_base_datos.md        Modelo relacional y normalizacion
-  sql/
-    01_ddl.sql                  DDL con PK, FK, NOT NULL y CHECK
-    02_datos_prueba.sql         Datos de prueba con 25+ registros por tabla
-    03_indices.sql              Indices explicitos con CREATE INDEX
-  README.md
-```
-
-## Checklist de la rubrica
-
-| Requisito | Estado | Evidencia |
-| --- | --- | --- |
-| Diagrama ER con entidades, atributos, relaciones y cardinalidades | Completo | `assets/diagrama_er_chen.svg` y `diagramas/diagrama_er_chen.drawio` |
-| Modelo relacional documentado | Completo | `docs/diseno_base_datos.md` |
-| Normalizacion hasta 3FN con dependencias funcionales | Completo | `docs/diseno_base_datos.md` |
-| DDL con `PRIMARY KEY`, `FOREIGN KEY` y `NOT NULL` | Completo | `sql/01_ddl.sql` |
-| Datos de prueba realistas con al menos 25 registros por tabla | Completo | `sql/02_datos_prueba.sql` |
-| Indices explicitos con `CREATE INDEX` y justificacion | Completo | `sql/03_indices.sql` y `sql/README.md` |
-
-
 
 ## Entidades principales
 
