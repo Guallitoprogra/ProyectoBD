@@ -55,7 +55,7 @@ El archivo `sql/01_ddl.sql` contiene la definicion completa de tablas. Incluye:
 
 ## Datos de prueba
 
-El archivo `sql/02_datos_prueba.sql` incluye datos realistas para probar el modelo:
+El archivo `sql/02_datos_prueba.sql` incluye datos realistas para probar el modelo. Los nombres de clientes, empleados, proveedores, categorias y productos representan datos de una tienda de tecnologia:
 
 - 25 categorias.
 - 25 proveedores.
@@ -76,3 +76,11 @@ El archivo `sql/03_indices.sql` define indices explicitos:
 - `idx_detalle_producto` sobre `detalle_venta(id_producto)`.
 
 Estos indices se justifican porque ayudan en busquedas de inventario y reportes de ventas.
+
+## Verificacion
+
+El archivo `sql/04_verificacion.sql` muestra conteos por tabla y confirma que los indices requeridos existen. Para ejecutar todo en orden se puede usar:
+
+```bash
+psql -U proy2 -d tienda_db -f sql/00_ejecutar_todo.sql
+```
